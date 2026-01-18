@@ -1,0 +1,102 @@
+/* 基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.navbar {
+  background: #fff;
+  padding: 1rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.logo span {
+  color: #007bff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.tag {
+  background: #e9ecef;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* 响应式布局核心 */
+.content {
+  padding: 40px 10%;
+}
+.display-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.grid-container {
+  display: grid;
+  /* 关键：自动填充列，且最小宽度为 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.grid-item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background: #007bff;
+  color: white;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+
+/* 移动端适配断点 */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+}
